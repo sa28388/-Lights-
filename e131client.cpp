@@ -26,10 +26,9 @@ e131client::e131client(const std::string& _ip, size_t length) :
 e131client::~e131client() {}
 
 void e131client::e131prepare() {
-	//first populate the vector w/ the right amt of packets for the number of universes
-	for (size_t i = 0; i < _nuniverses; ++i) _packets.push_back(e131_packet_t());
-	
-	for (size_t i=0; i < _packets.size(); ++i) {
+	//populate the vector w/ the right amt of packets for the number of universes
+	for (size_t i = 0; i < _nuniverses; ++i) {
+		_packets.push_back(e131_packet_t());
 		e131_pkt_init(&_packets[i], i + 1, UNIVERSE_SIZE); //Initialize all packets w/ 512 slots, and appropriate universe number
 	}
 }

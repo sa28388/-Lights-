@@ -6,7 +6,7 @@ basically coding the behavior of a physical device
 #define DEVICE_H
 
 #include "e131client.hpp"
-#include "effect.hpp"
+#include "effect_interface.hpp"
 #include "ledstrip.hpp"
 #include <memory>
 #include <string>

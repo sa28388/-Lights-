@@ -5,7 +5,7 @@ Device test
 #include <thread>
 #include "device.hpp"
 #include <iostream>
-#include "solidcoloreffect.hpp"
+#include "effect_solidcolor.hpp"
 
 int main() {
 	std::string name("test"),
