@@ -40,5 +40,8 @@ public:
 	//set brightness of entire strip
 	void setbrightness(float level);
 
+	//Set both in one loop iteration :)
+	void set(const rgb& color, float level);
+
 }; //ledstrip
 #endif //LEDSTRIP_H

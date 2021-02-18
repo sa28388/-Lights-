@@ -6,6 +6,7 @@ Device test
 #include "device.hpp"
 #include <iostream>
 #include "effect_solidcolor.hpp"
+#include "effect_breathe.hpp"
 
 int main() {
 	std::string name("test"),
@@ -15,10 +16,10 @@ int main() {
 		refresh = 60;
 
 	device dev(name, ip, nleds, refresh);
-	std::unique_ptr<effect> effect = std::make_unique<solidcolor>(colors::RED);
-
+	
+	
 	dev.activate();
-	dev.seteffect(std::move(effect));
+	dev.seteffect(std::make_unique<breathe>(colors::RED));
 	
 	dev.start();
 
