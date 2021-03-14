@@ -18,7 +18,7 @@ private:
 	float _brightness, //current brightness value
 		_beta, //beta and gamma are parameters used ONLY in gaussian wave function
 		_gamma,
-		_smoothness; //bigger = faster brightness change
+		_smoothness; //bigger = slow brightness change. step value.
 	wavefunction _w; //function to calculate the next brightness level
 	
 	//threading stuff

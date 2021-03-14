@@ -7,11 +7,12 @@ Is tuple adding extra unnecessary overhead?
 #ifndef LED_H
 #define LED_H
 
+#include "colors.hpp"
 #include <tuple>
 
 class led {
-	using color_value = size_t;
-	using rgb = std::tuple<color_value, color_value, color_value>;
+	using color_value = colors::color_value;
+	using rgb = colors::rgb;
 
 private:
 	rgb _color; //currently set rgb color value, in a tuple

@@ -6,6 +6,7 @@ Defining some functions to control brightness waves
 #include "wavefunctions.hpp"
 
 namespace functions {
+	// These functions return a brightness value based on a certain waveform
 	const wavefunction TRIANGULAR = [](float i, float smoothness, float dummy1, float dummy2) {
 		return static_cast<float>((1.0 - abs((2.0*(i / smoothness)) - 1.0)));
 	};

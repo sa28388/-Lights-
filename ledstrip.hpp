@@ -5,12 +5,13 @@ coding the behavior of a physical led strip
 #ifndef LEDSTRIP_H
 #define LEDSTRIP_H
 
+#include "colors.hpp"
 #include "led.hpp"
 #include <vector>
 
 class ledstrip {
 private:
-	using rgb = std::tuple<size_t, size_t, size_t>;
+	using rgb = colors::rgb;
 
 	std::vector<led> _pixels; //and RGB array ((rgb),(rgb),(rgb),...)
 	std::vector<int> _flatpixels; //a flattened version of the array (3x the size). Preallocated memory that we re-use each call
