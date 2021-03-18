@@ -45,8 +45,5 @@ void ledstrip::setbrightness(float level) {
 }
 
 void ledstrip::set(const rgb& color, float level) {
-	for (auto& pixel : _pixels) {
-		pixel.color(color);
-		pixel.brightness(level);
-	}
+	for (auto& pixel : _pixels) pixel.set(color, level);
 }

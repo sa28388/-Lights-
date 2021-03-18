@@ -45,6 +45,8 @@ public:
 	color_value b() const;
 	void b(color_value b);
 
+	void set(const rgb& color, float level); //set both color/brightness
+
 	//Expose access to output channels. Const. Can't modify the state w/ these
 	color_value r_out() const;
 	color_value g_out() const;

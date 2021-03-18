@@ -56,6 +56,12 @@ void led::b(color_value b) {
 	refresh();
 }
 
+//set color and brightness together
+void led::set(const rgb& color, float level) {
+	_color = color;
+	brightness(level); //this will call refresh
+}
+
 //Expose access to output channels. 
 //We can't use these to actually modify the channels themselves. Observation ONLY
 led::color_value led::r_out() const { return _r; }
