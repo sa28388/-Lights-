@@ -32,6 +32,9 @@ public:
 	//We need this to populate the dmx data of the e131 packet
 	std::vector<int>& flatten();
 
+	//Give access to the whole led array directly 
+	std::vector<led>& array();
+
 	//Access the individual leds of strip by reference so we can modify it.
 	led& operator[](size_t i);
 

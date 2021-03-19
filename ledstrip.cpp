@@ -31,6 +31,10 @@ std::vector<int>& ledstrip::flatten() {
 	return _flatpixels;
 }
 
+std::vector<led>& ledstrip::array() {
+	return _pixels;
+}
+
 led& ledstrip::operator[](size_t i) {
 	return _pixels[i];
 }
