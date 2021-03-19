@@ -5,6 +5,8 @@ coding the behavior of a physical rgb led light
 #include <algorithm>
 #include "led.hpp"
 
+colors::color_value led::max = 255; //rgb can't be higher than this.
+
 void led::refresh() {
 	//refresh output channels 
 	//apply the brightness/adjusted output.
@@ -18,11 +20,20 @@ led::led() :
 	_brightness(0),
 	_r(0),
 	_g(0),
-	_b(0),
-	max(255)
+	_b(0)
 {}
 
 led::~led() {}
+
+led& led::operator=(const led& other) {
+	_color = other._color;
+	_brightness = other._brightness;
+	_r = other._r; //copy these so I don't have to call refresh.
+	_g = other._g;
+	_b = other._b;
+
+	return *this;
+}
 
 float led::brightness() const { return _brightness; }
 void led::brightness(float brightness) {

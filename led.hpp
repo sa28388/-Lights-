@@ -17,14 +17,16 @@ class led {
 private:
 	rgb _color; //currently set rgb color value, in a tuple
 	float _brightness; //brightness scalar, and current brightness level (from 0 to 1)
-	color_value _r, _g, _b, //effective color values - the actual output channels
-		max; //shouldnt be more than 255 since thats how rgb works
+	color_value _r, _g, _b; //effective color values - the actual output channels
+	static color_value max; //shouldnt be more than 255 since thats how rgb works
 
 	void refresh(); //refresh _r,_g,_b (the output channels)
 
 public:
 	led(); //everything will be initialized to default values. always.
 	~led(); //destroy the color.
+
+	led& operator=(const led& other); //copy assignment
 
 	//Get and set brightness values
 	//This can be a decimal, but since rgb code is all integral it will get casted/rounded.

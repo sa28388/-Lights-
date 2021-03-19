@@ -1,12 +1,13 @@
-#include "audiomanager.h"
+#include "audiostream.hpp"
 #include <iostream>
 
 int main(void)
 {
 	
-	audiomanager am;
-	//std::cout << std::endl;
-	//for (auto& dev : am.devices()) std::cout << dev << "\n";
+	audiostream a;
+
+
+
 	return 0;
 }
 
