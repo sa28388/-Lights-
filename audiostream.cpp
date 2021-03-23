@@ -101,9 +101,9 @@ audiostream::audiostream(const PaStreamParameters* deviceParameters) {
 	_bufferinit();
 
 	//open stream using passed in device parameters
-	Pa_OpenStream(&_stream,
+	Pa_OpenStream(&_stream, //function asks for PaStream**
 		deviceParameters,
-		nullptr,
+		nullptr, //no output parameters
 		SAMPLE_RATE,
 		FRAMES_PER_BUF,
 		paNoFlag, //flags for defining dither, clip settings. I'm not using them right now.

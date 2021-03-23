@@ -1,4 +1,5 @@
-#include "audiostream.hpp"
+//#include "audiostream.hpp"
+#include "audiomanager.h"
 #include <iostream>
 #include <atomic>
 #include <iostream>
@@ -30,6 +31,7 @@ auto threadfunc = [&]() -> void {
 
 int main(void)
 {
+	/*/
 	Pa_Initialize();
 
 	a.start();
@@ -45,6 +47,12 @@ int main(void)
 	a.stop();
 
 	Pa_Terminate();
+	*/
+
+	audiomanager a;
+
+	for (const auto& dev : a.devices()) std::cout << dev.first << " " << dev.second << "\n";
+
 
 	return 0;
 }
