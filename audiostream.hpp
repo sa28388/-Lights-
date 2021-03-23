@@ -43,7 +43,8 @@ public:
 		PaStreamCallbackFlags statusFlags,
 		void* userData);
 
-	audiostream(); //initialize/open stream (dont start)
+	audiostream(); //initialize/open stream (dont start). Default recording device
+	audiostream(const PaStreamParameters* deviceParameters); //Open stream with specific recording device parameters
 	~audiostream(); //destruct and also stop the stream
 
 	void start(); //start stream

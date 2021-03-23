@@ -96,6 +96,21 @@ audiostream::audiostream() {
 		(void*)this); //The data structure that contains the stream data is this object.
 }
 
+audiostream::audiostream(const PaStreamParameters* deviceParameters) {
+	//make sure buffer is initialized
+	_bufferinit();
+
+	//open stream using passed in device parameters
+	Pa_OpenStream(&_stream,
+		deviceParameters,
+		nullptr,
+		SAMPLE_RATE,
+		FRAMES_PER_BUF,
+		paNoFlag, //flags for defining dither, clip settings. I'm not using them right now.
+		paRecordCallback,
+		(void*)this);
+}
+
 audiostream::~audiostream() {
 	stop(); //make sure to stop the stream if it's active.
 	PaUtil_FreeMemory((SAMPLE*)_bufferdata);
